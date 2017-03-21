@@ -94,7 +94,11 @@ func main() {
 	pass := []byte(os.Getenv("MYTOTP_PASSPHRASE"))
 	if len(pass) < 1 {
 		fmt.Print("mytotp passphrase: ")
-		pass = []byte(gopass.GetPasswd())
+		if str,err := gopass.GetPasswd();err!=nil {
+		    fatal(err)
+		}else{
+		    pass = []byte()
+		}
 	}
 	salt := []byte("salt is so salty") // TODO: randomly generate this and store it @ the beginning of the totp creds file.
 	// "The recommended parameters for interactive logins as of 2009 are N=16384, r=8, p=1"
