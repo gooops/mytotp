@@ -97,7 +97,7 @@ func main() {
 		if str,err := gopass.GetPasswd();err!=nil {
 		    fatal(err)
 		}else{
-		    pass = []byte()
+		    pass = []byte(str)
 		}
 	}
 	salt := []byte("salt is so salty") // TODO: randomly generate this and store it @ the beginning of the totp creds file.
