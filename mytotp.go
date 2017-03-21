@@ -2,7 +2,7 @@ package main
 
 import (
 	"bytes"
-	"github.com/golang/crypto/scrypt"
+	"golang.org/x/crypto/scrypt"
 	"crypto/aes"
 	"crypto/cipher"
 	"crypto/rand"
